@@ -1,0 +1,34 @@
+/* vh = viewport height */
+.header {
+  height: 95vh; /* means 95% of viewport height */
+  background-image: linear-gradient(
+    to right bottom,
+    rgba($color-primary-light, 0.8),
+    rgba($color-primary-dark, 0.8)),
+    url(../img/hero.jpg); /* two bg images - one gradient on top, one hero img under it*/
+  background-size: cover; /* cover - fits into the viewport*/
+  background-position: top;
+  position: relative;
+
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%); /* webkit one because it's new */
+  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%); /* defines a polygon to show*/
+
+  &__logo-box {
+    position: absolute;
+    top: 4rem; /* remember, reference point for abs position is first parent with rel postioning*/
+    left: 4rem;
+  }
+
+  &__logo {
+    height: 3.5rem;
+  }
+
+  &__text-box {
+    position: absolute;
+    /* if you do top/left 50%, it centers the top left corner of the element at 50%, 50%. These are in relation to parent element */
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* these percents refer to this element, not the parent element */
+    text-align: center;
+  }
+}

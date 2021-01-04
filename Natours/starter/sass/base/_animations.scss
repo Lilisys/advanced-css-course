@@ -1,0 +1,52 @@
+/* Two types of animations:
+  1. transition on property that happens on event (easier)
+  2. keyframes (advanced)
+  */
+
+/* For browser performance, it's best to only ever animate 2 properties - opacity and transform. Browsers are optimized for these 2 */
+@keyframes moveInLeft {
+  /* Specify time points of animation */
+  0% { /* initial state */
+    opacity: 0;
+    transform: translateX(-10rem);
+  }
+
+  80% {
+    transform: translateX(1rem);
+  }
+
+  100% { /* final state */
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes moveInRight {
+  /* Specify time points of animation */
+  0% { /* initial state */
+    opacity: 0;
+    transform: translateX(10rem);
+  }
+
+  80% {
+    transform: translateX(-1rem);
+  }
+
+  100% { /* final state */
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+@keyframes moveInBottom {
+  /* Specify time points of animation */
+  0% { /* initial state */
+    opacity: 0;
+    transform: translateY(3rem);
+  }
+
+  100% { /* final state */
+    opacity: 1;
+    transform: translate(0);
+  }
+}

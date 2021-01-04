@@ -1,0 +1,17 @@
+/* Universal reset to make all browsers render the page the same way*/
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit; /* Force inheritance, all elements will inherit from body in this case */
+}
+
+html {
+  /*font-size: 10px; /* Set this to use rem units. Set to 10 so it's easy to remember 1rem === 10px */
+  font-size: 62.5%; /* Set this to % so it can scale with browser font size. Good for if someone set their own default browser font-size. 10/16 === .625. */
+}
+
+body {
+  box-sizing: border-box;
+}
