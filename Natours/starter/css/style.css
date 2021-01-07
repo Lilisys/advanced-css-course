@@ -1,3 +1,18 @@
+/*
+0 - 600px;      Phone
+600-900px:      Tablet portrait
+900-1200px:     Tablet landscape
+[1200-1800px]:  normal styles
+1800px+:    Big desktop
+
+$breakpoint argument choices:
+- phone
+- tab-port
+- tab-land
+- big-desktop
+
+1em = 16px
+*/
 /* Two types of animations:
   1. transition on property that happens on event (easier)
   2. keyframes (advanced)
@@ -51,8 +66,17 @@
 
 html {
   /*font-size: 10px; /* Set this to use rem units. Set to 10 so it's easy to remember 1rem === 10px */
-  font-size: 62.5%;
-  /* Set this to % so it can scale with browser font size. Good for if someone set their own default browser font-size. 10/16 === .625. */ }
+  /* Set this to % so it can scale with browser font size. Good for if someone set their own default browser font-size. 10/16 === .625. */
+  font-size: 62.5%; }
+  @media (max-width: 75em) {
+    html {
+      font-size: 56.25%; } }
+  @media (max-width: 56.25em) {
+    html {
+      font-size: 50%; } }
+  @media (min-width: 112.5em) {
+    html {
+      font-size: 75%; } }
 
 body {
   box-sizing: border-box; }

@@ -85,7 +85,7 @@
       height: 1.3rem;
       width: 1.3rem;
       border-radius: 50%;
-      @include center-horizontal;
+      @include absCenter;
       background-color: $color-primary;
       opacity: 0;
       transition: opacity .2s;

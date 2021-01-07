@@ -41,7 +41,7 @@
   }
 
   &__list {
-    @include center-horizontal;
+    @include absCenter;
     list-style: none;
     text-align: center;
     width: 100%;

@@ -9,7 +9,21 @@
 
 html {
   /*font-size: 10px; /* Set this to use rem units. Set to 10 so it's easy to remember 1rem === 10px */
-  font-size: 62.5%; /* Set this to % so it can scale with browser font size. Good for if someone set their own default browser font-size. 10/16 === .625. */
+  /* Set this to % so it can scale with browser font size. Good for if someone set their own default browser font-size. 10/16 === .625. */
+  font-size: 62.5%; // default size - 1 rem = 10px; 10px/16px = 62.5%;
+
+  @include respond(tab-land) {
+    font-size: 56.25%; // 1 rem = 9px, 9/16 = 56.25%
+  }
+
+  // Don't need one for phone since the tab-port one checks for width < tab-port, and phone is under that
+  @include respond(tab-port) {
+    font-size: 50%; // 1 rem = 8px, 8/16 = 50%
+  }
+
+  @include respond(big-desktop) {
+    font-size: 75%; // 1 rem = 12px, 12/16 = 75%
+  }
 }
 
 body {
