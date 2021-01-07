@@ -4,15 +4,15 @@ body {
   /* font-size: 16px; */
   line-height: 1.7;
   color: $color-grey-dark;
-  padding: 3rem;
 }
 
-.heading-primary { 
+.heading-primary {
   color: $color-white;
   text-transform: uppercase;
 
   backface-visibility: hidden; /* sometimes horiz animations might shake a bit vertically, this fixes it */
   margin-bottom: 6rem;
+
 
   /* Remember, block elements occupy entire width, and they create line breaks before and after them. Span is inline (like text) */
   &--main {
@@ -26,10 +26,15 @@ body {
     animation-duration: 1s;
     animation-timing-function: ease-out;
 
-    /* 
-    animation-delay: 3s; 
+    /*
+    animation-delay: 3s;
     animation-iteration-count: 3;
     */
+
+    @include respond(phone) {
+      letter-spacing: 1rem;
+      font-size: 5rem;
+    }
   }
 
   &--sub {
@@ -39,12 +44,16 @@ body {
     letter-spacing: 1.75rem;
 
     animation: moveInRight 1s ease-out;
+
+    @include respond(phone) {
+      letter-spacing: .5rem;
+    }
   }
 }
 
 .heading-secondary {
   font-size: 3.5rem;
-  text-transform: uppercase; 
+  text-transform: uppercase;
   font-weight: 700;
   display: inline-block;
   background-image: linear-gradient(to right, $color-primary-light, $color-primary-dark);
@@ -53,6 +62,13 @@ body {
   color: transparent;
   letter-spacing: 2px;
   transition: all .2s;
+
+  @include respond(tab-port) {
+    font-size: 3rem;
+  }
+  @include respond(phone) {
+    font-size: 2.5rem;
+  }
 
   &:hover {
     transform: skewY(2deg) skewX(15deg) scale(1.1);
